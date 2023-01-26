@@ -35,13 +35,13 @@ with col3:
 with col1:
     thal = st.text_input('Nilai Thal')
     
-heart_diagosis =''
+heart_diagnosis =''
 
 if st.button('Prediksi Penyakit Jantung'):
     heart_prediction = model.predict([[age, sex, cp, trestbps, chol, fbs, restecg, thalach, exang, oldpeak, slope, ca, thal]])
     
     if(heart_prediction[0]==1):
-        heart_diagosis = 'Pasien Terkena Penyakit Jantung'
+        heart_diagnosis = 'Pasien Terkena Penyakit Jantung'
     else:
         heart_prediction = 'Pasien Tidak Terkena Penyakit Jantung'
-st.success(heart_diagosis)
+st.success(heart_diagnosis)
